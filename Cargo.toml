@@ -1,11 +1,11 @@
 [package]
-name = "readability"
+name = "readability-liveboat"
 version = "0.3.0"
-authors = ["Hiroki Kumamoto <kumabook@live.jp>"]
+authors = ["Hiroki Kumamoto <kumabook@live.jp>", "Konrad Wasowicz <exaroth@gmail.com>"]
 license = "MIT"
 homepage = "https://github.com/kumabook/readability"
-repository = "https://github.com/kumabook/readability.git"
-description = "Port of arc90's readability project to rust"
+repository = "https://github.com/exaroth/readability.git"
+description = "Port of arc90's readability project to rust, updated for use with liveboat"
 keywords = ["readability"]
 categories = []
 
