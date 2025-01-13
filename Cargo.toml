@@ -1,6 +1,7 @@
 [package]
 name = "readability-liveboat"
-version = "0.3.0"
+version = "0.3.1"
+edition = "2015"
 authors = ["Hiroki Kumamoto <kumabook@live.jp>", "Konrad Wasowicz <exaroth@gmail.com>"]
 license = "MIT"
 homepage = "https://github.com/kumabook/readability"

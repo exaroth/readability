@@ -1,6 +1,10 @@
 readability-rs
 =============
 
+## NOTE:
+
+This is fork of readability-rs which contains changes required by the Liveboat project. I'm not original author of the project
+
 [![Build Status](https://travis-ci.org/kumabook/readability.svg?branch=master)](https://travis-ci.org/kumabook/readability)
 
 readability-rs is a library for extracting the primary readable content of a webpage.

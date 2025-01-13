@@ -330,10 +330,8 @@ pub fn clean(
             let tag_name = name.local.as_ref();
             match tag_name.to_lowercase().as_ref() {
                 "script" | "link" | "style" | "noscript" | "meta" | "h1" | "object" | "header"
-                | "footer" | "aside" => useless = true,
-                "form" | "table" | "ul" | "div" => {
-                    useless = is_useless(id, handle.clone(), candidates)
-                }
+                | "footer" | "aside" | "form" | "button" => useless = true,
+                "table" | "ul" | "div" => useless = is_useless(id, handle.clone(), candidates),
                 "img" => useless = !fix_img_path(handle.clone(), url),
                 "a" => useless = !fix_anchor_path(handle.clone(), url),
                 _ => (),
