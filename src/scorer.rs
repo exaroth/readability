@@ -329,12 +329,18 @@ pub fn clean(
         } => {
             let tag_name = name.local.as_ref();
             match tag_name.to_lowercase().as_ref() {
-                "script" | "link" | "style" | "noscript" | "meta" | "h1" | "object" | "header"
-                | "footer" | "aside" | "form" | "button" => useless = true,
-                "table" | "ul" | "div" => useless = is_useless(id, handle.clone(), candidates),
+                "table" | "ul" | "ol" | "li" | "div" | "p" | "h2" | "h3" | "h4" | "h5" | "h6"
+                | "article" | "hgroup" | "main" | "section" | "blockquote" | "dd" | "dl"
+                | "figcaption" | "figure" | "hr" | "br" | "pre" | "code" | "abbr" | "b"
+                | "cite" | "dfn" | "em" | "i" | "mark" | "q" | "rp" | "rt" | "ruby" | "s"
+                | "samp" | "small" | "strong" | "sub" | "sup" | "time" | "u" | "var" | "wbr"
+                | "picture" | "svg" | "math" | "noscript" | "caption" | "col" | "colgroup"
+                | "tbody" | "td" | "tfoot" | "th" | "tr" | "thead" => {
+                    useless = is_useless(id, handle.clone(), candidates)
+                }
                 "img" => useless = !fix_img_path(handle.clone(), url),
                 "a" => useless = !fix_anchor_path(handle.clone(), url),
-                _ => (),
+                _ => useless = true,
             }
             dom::clean_attr("id", &mut attrs.borrow_mut());
             dom::clean_attr("class", &mut attrs.borrow_mut());
