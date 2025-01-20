@@ -334,7 +334,7 @@ pub fn clean(
                 | "figcaption" | "figure" | "hr" | "br" | "pre" | "code" | "abbr" | "b"
                 | "cite" | "dfn" | "em" | "i" | "mark" | "q" | "rp" | "rt" | "ruby" | "s"
                 | "samp" | "small" | "strong" | "sub" | "sup" | "time" | "u" | "var" | "wbr"
-                | "picture" | "svg" | "math" | "noscript" | "caption" | "col" | "colgroup"
+                | "picture" | "svg" | "math" | "caption" | "col" | "colgroup"
                 | "tbody" | "td" | "tfoot" | "th" | "tr" | "thead" => {
                     useless = is_useless(id, handle.clone(), candidates)
                 }
