@@ -1,5 +1,5 @@
 [package]
-name = "readability_liveboat"
+name = "readability-liveboat"
 version = "0.3.2"
 edition = "2015"
 authors = ["Hiroki Kumamoto <kumabook@live.jp>", "Konrad Wasowicz <exaroth@gmail.com>"]
