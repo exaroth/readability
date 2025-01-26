@@ -12,6 +12,8 @@ pub enum Error {
     UrlParseError(url::ParseError),
     Unexpected,
     IOError(io::Error),
+    MissingContentType,
+    InvalidContentType(String)
 }
 
 impl Display for Error {
@@ -22,6 +24,8 @@ impl Display for Error {
             Error::UrlParseError(ref e) => write!(f, "UrlParseError:  {}", e),
             Error::Unexpected => write!(f, "UnexpectedError"),
             Error::IOError(ref e) => write!(f, "InputOutputError: {}", e),
+            Error::MissingContentType => write!(f, "No content type returned in response"),
+            Error::InvalidContentType(ref s ) => write!(f, "Received non compatible content type: {}", s),
         }
     }
 }

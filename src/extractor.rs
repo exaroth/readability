@@ -30,6 +30,14 @@ pub fn scrape(url: &str) -> Result<Product, Error> {
         .build()?;
     let mut res = client.get(url).send()?;
     if res.status().is_success() {
+        let content_type_r = res.headers().get("content-type");
+        if content_type_r.is_none() {
+            return Err(Error::MissingContentType)
+        }
+        let content_type = content_type_r.unwrap().to_str().unwrap();
+        if !content_type.contains("text/html") {
+            return Err(Error::InvalidContentType(content_type.to_string()));
+        }
         let url = Url::parse(url)?;
         extract(&mut res, &url)
     } else {
